@@ -1,34 +1,34 @@
 /* poppins-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/poppins-v24-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/poppins-v24-latin-regular.woff2") format("woff2");
 }
 /* poppins-500 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
-  src: url("../fonts/poppins-v24-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/poppins-v24-latin-500.woff2") format("woff2");
 }
 /* poppins-600 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/poppins-v24-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/poppins-v24-latin-600.woff2") format("woff2");
 }
 /* poppins-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/poppins-v24-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/poppins-v24-latin-700.woff2") format("woff2");
 }
 
 :root {
@@ -39,6 +39,26 @@
   --text-color-light: #918889;
   --body-color: #ffffff;
   --container-color: #ffffff;
+}
+
+body.dark-theme {
+  --first-color: #db4d59;
+  --first-color-alt: #d42b39;
+  --title-color: #f3f2f2;
+  --text-color: #c2bdbd;
+  --text-color-light: #918889;
+  --body-color: #251819;
+  --container-color: #2f2223;
+}
+
+body.dark-theme .send-input {
+  background-color: var(--container-color);
+  color: var(--title-color);
+}
+
+body.dark-theme .send-btn {
+  background-color: var(--title-color);
+  color: #ffffff;
 }
 
 * {
@@ -62,12 +82,14 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--body-color);
+  color: var(--text-color);
 }
 
 .container {
   width: auto;
   max-width: 1200px;
-  margin: 0 156px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
@@ -80,6 +102,23 @@ body {
   font-size: 16px;
   line-height: 100%;
   letter-spacing: 0%;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  gap: 8px;
+}
+
+.navbar a img {
+  display: block;
+}
+
+.menu-toggle {
+  display: none;
 }
 
 .navbar-links {
@@ -119,6 +158,7 @@ body {
   line-height: 140%;
   letter-spacing: 0%;
   width: 450px;
+  color: var(--title-color);
 }
 
 .hero-text {
@@ -127,6 +167,7 @@ body {
   font-size: 15px;
   letter-spacing: 0%;
   width: 380px;
+  color: var(--text-color);
 }
 
 .hero-btn {
@@ -134,7 +175,7 @@ body {
   padding: 20px 56px;
   border-radius: 64px;
   background-color: var(--first-color);
-  color: var(--body-color);
+  color: #ffffff;
   font-weight: 500;
   font-size: 16px;
 }
@@ -155,6 +196,7 @@ body {
   text-align: center;
   margin-top: 72px;
   margin-bottom: 56px;
+  color: var(--title-color);
 }
 
 .ideas-items {
@@ -178,6 +220,7 @@ body {
   font-weight: 600;
   font-size: 20px;
   text-align: center;
+  color: var(--title-color);
 }
 .idea-desc {
   margin-top: 4px;
@@ -185,6 +228,7 @@ body {
   font-style: Regular;
   font-size: 14px;
   text-align: center;
+  color: var(--text-color);
 }
 
 .celebrate-section {
@@ -219,7 +263,7 @@ body {
   padding: 16px 32px;
   border-radius: 64px;
   background-color: var(--first-color);
-  color: var(--body-color);
+  color: #ffffff;
   font-weight: 500;
   font-size: 16px;
 }
@@ -538,6 +582,12 @@ body {
   margin-bottom: 24px;
 }
 
+.footer-data a {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--title-color);
+}
+
 .footer-links {
   list-style: none;
   display: flex;
@@ -584,4 +634,367 @@ body {
   font-size: 12px;
   color: var(--text-color-light);
   margin-top: 48px;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    margin: 0 40px;
+  }
+
+  .navbar-links {
+    gap: 24px;
+  }
+
+  .hero-image {
+    width: 45%;
+    height: auto;
+  }
+
+  .hero-title {
+    width: auto;
+    font-size: 34px;
+  }
+
+  .hero-text {
+    width: auto;
+  }
+
+  .ideas-items {
+    gap: 64px;
+  }
+
+  .celebrate-wrapper {
+    gap: 40px;
+  }
+
+  .celebrate-text {
+    width: auto;
+  }
+
+  .celebrate-image {
+    width: 45%;
+  }
+
+  .new-wrapper {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 0 4px 12px;
+  }
+
+  .new-card {
+    flex: 0 0 230px;
+  }
+
+  .send-wrapper {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .send-image {
+    width: 260px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    margin: 0 16px;
+    padding: 0 12px;
+  }
+
+  .navbar {
+    padding: 20px 0;
+  }
+
+  .navbar-brand {
+    font-size: 15px;
+  }
+
+  .navbar-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .navbar-links {
+    gap: 24px;
+  }
+
+  .navbar-links .link {
+    display: none;
+  }
+
+  .navbar-links .mode-toggle img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .menu-toggle {
+    display: block;
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero-wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-image {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 20px auto 24px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+    line-height: 1.35;
+  }
+
+  .hero-text {
+    max-width: 380px;
+    margin: 12px auto 0;
+  }
+
+  .hero-btn {
+    margin-top: 24px;
+    padding: 16px 40px;
+  }
+
+  .ideas-title {
+    margin-top: 64px;
+    margin-bottom: 36px;
+  }
+
+  .ideas-items {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px 12px;
+  }
+
+  .ideas-item {
+    width: calc(50% - 6px);
+    margin-bottom: 0;
+  }
+
+  .idea-name {
+    font-size: 17px;
+  }
+
+  .idea-desc {
+    font-size: 13px;
+  }
+
+  .celebrate-section {
+    padding-top: 56px;
+    padding-bottom: 40px;
+  }
+
+  .celebrate-wrapper {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .celebrate-left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .celebrate-title {
+    font-size: 22px;
+  }
+
+  .celebrate-text {
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  .celebrate-btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 15px 20px;
+  }
+
+  .celebrate-image {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .gifts-title {
+    margin-top: 40px;
+    margin-bottom: 32px;
+  }
+
+  .gifts-wrapper {
+    width: 100%;
+    gap: 20px 12px;
+  }
+
+  .gift-item {
+    width: calc(50% - 6px);
+    padding: 16px 14px 20px;
+  }
+
+  .gift-img {
+    height: 104px;
+    padding: 0 8px;
+    margin-top: 16px;
+    margin-bottom: 18px;
+  }
+
+  .gift-title {
+    font-size: 13px;
+  }
+
+  .new-section {
+    padding-top: 48px;
+  }
+
+  .new-title {
+    margin-bottom: 32px;
+  }
+
+  .new-wrapper {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 0 4px 12px;
+  }
+
+  .new-card {
+    flex: 0 0 80%;
+    max-width: 300px;
+  }
+
+  .new-pagination {
+    margin-top: 20px;
+    margin-bottom: 16px;
+  }
+
+  .send-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .send-wrapper {
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 20px;
+    border-radius: 24px;
+  }
+
+  .send-left {
+    width: 100%;
+    align-items: center;
+  }
+
+  .send-title {
+    font-size: 27px;
+    text-align: center;
+  }
+
+  .send-form {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .send-btn {
+    width: 100%;
+  }
+
+  .send-image {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .footer {
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .footer-title {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+
+  .footer-links {
+    gap: 8px;
+  }
+
+  .footer-link {
+    font-size: 14px;
+  }
+
+  .footer-apps {
+    gap: 8px;
+  }
+
+  .footer-apps img {
+    width: 110px;
+  }
+
+  .footer-ball-1 {
+    position: absolute;
+    top: 92px;
+    right: 0;
+    width: 72px;
+    margin-top: 0;
+  }
+
+  .footer-ball-2 {
+    right: 0;
+    bottom: 72px;
+    width: 72px;
+  }
+
+  .footer-copy {
+    margin-top: 36px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .container {
+    margin: 0 12px;
+    padding: 0 8px;
+  }
+
+  .navbar-links {
+    gap: 18px;
+  }
+
+  .hero-title {
+    font-size: 25px;
+  }
+
+  .idea-name {
+    font-size: 15px;
+  }
+
+  .gift-item {
+    padding: 14px 10px 16px;
+  }
+
+  .gift-price {
+    font-size: 18px;
+  }
+
+  .send-wrapper {
+    padding: 28px 16px;
+  }
 }
